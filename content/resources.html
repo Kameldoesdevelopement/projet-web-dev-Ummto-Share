@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ressources — UMMTO Share</title>
+  <link rel="stylesheet" href="../style/main.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-bar">
+      <a href="../index.html" class="logo">UMMTO<span>Share</span></a>
+      <nav aria-label="Navigation principale">
+        <ul class="nav-links">
+          <li><a href="../index.html">Accueil</a></li>
+          <li><a href="resources.html" class="active">Ressources</a></li>
+          <li><a href="upload.html">Partager</a></li>
+          <li><a href="leaderboard.html">Helpers</a></li>
+          <li><a href="login.html">Connexion</a></li>
+          <li><a href="register.html" class="btn-cta">Inscription</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="page-head">
+      <h1>Ressources partagées</h1>
+      <p class="muted">Cours, TD, examens, projets — partagés par la communauté.</p>
+    </section>
+
+    <section class="filters" aria-label="Filtres">
+      <div class="filter-group">
+        <label for="filterMajor">Filière</label>
+        <select id="filterMajor">
+          <option value="all">Toutes</option>
+          <option>Informatique</option>
+          <option>Génie électrique</option>
+          <option>Mathématiques</option>
+          <option>Physique</option>
+          <option>Biologie</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="filterType">Type</label>
+        <select id="filterType">
+          <option value="all">Tous</option>
+          <option>Cours</option>
+          <option>TD</option>
+          <option>Examen</option>
+          <option>Projet</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="filterSearch">Recherche</label>
+        <input type="search" id="filterSearch" placeholder="Titre, mot-clé..." />
+      </div>
+    </section>
+
+    <section id="resourceList" class="resource-grid" aria-live="polite"></section>
+    <p id="emptyState" class="empty-state" hidden>Aucune ressource ne correspond à ces filtres.</p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"><p>&copy; UMMTO Share</p></div>
+  </footer>
+
+  <script src="../javascript/auth.js"></script>
+  <script src="../javascript/data.js"></script>
+  <script src="../javascript/resources.js"></script>
+</body>
+</html>
