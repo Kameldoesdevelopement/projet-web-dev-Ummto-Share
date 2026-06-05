@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inscription — UMMTO Share</title>
+  <link rel="stylesheet" href="../style/main.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-bar">
+      <a href="../index.html" class="logo">UMMTO<span>Share</span></a>
+      <nav aria-label="Navigation principale">
+        <ul class="nav-links">
+          <li><a href="../index.html">Accueil</a></li>
+          <li><a href="resources.html">Ressources</a></li>
+          <li><a href="upload.html">Partager</a></li>
+          <li><a href="leaderboard.html">Helpers</a></li>
+          <li><a href="login.html">Connexion</a></li>
+          <li><a href="register.html" class="btn-cta active">Inscription</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container form-page">
+    <section class="form-card">
+      <h1>Créer un compte</h1>
+      <p class="muted">Rejoins la communauté UMMTO Share.</p>
+
+      <form id="registerForm" novalidate>
+        <div class="field">
+          <label for="fullname">Nom complet</label>
+          <input type="text" id="fullname" name="fullname" placeholder="Karim Belkacem" required />
+          <small class="error" data-error-for="fullname"></small>
+        </div>
+
+        <div class="field">
+          <label for="email">Email universitaire</label>
+          <input type="email" id="email" name="email" placeholder="prenom.nom@ummto.dz" required />
+          <small class="error" data-error-for="email"></small>
+        </div>
+
+        <div class="field">
+          <label for="major">Filière</label>
+          <select id="major" name="major" required>
+            <option value="">— Choisir —</option>
+            <option value="Informatique">Informatique</option>
+            <option value="Génie électrique">Génie électrique</option>
+            <option value="Mathématiques">Mathématiques</option>
+            <option value="Physique">Physique</option>
+            <option value="Biologie">Biologie</option>
+          </select>
+          <small class="error" data-error-for="major"></small>
+        </div>
+
+        <div class="field">
+          <label for="year">Année</label>
+          <select id="year" name="year" required>
+            <option value="">— Choisir —</option>
+            <option>L1</option><option>L2</option><option>L3</option>
+            <option>M1</option><option>M2</option>
+          </select>
+          <small class="error" data-error-for="year"></small>
+        </div>
+
+        <div class="field">
+          <label for="password">Mot de passe</label>
+          <input type="password" id="password" name="password" required />
+          <small class="hint">8+ caractères, 1 majuscule, 1 chiffre.</small>
+          <small class="error" data-error-for="password"></small>
+        </div>
+
+        <div class="field">
+          <label for="confirm">Confirmer le mot de passe</label>
+          <input type="password" id="confirm" name="confirm" required />
+          <small class="error" data-error-for="confirm"></small>
+        </div>
+
+        <div class="field checkbox">
+          <input type="checkbox" id="helper" name="helper" />
+          <label for="helper">Je veux être <strong>Helper</strong> et aider les autres étudiants.</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">S'inscrire</button>
+        <p class="form-footer">Déjà inscrit ? <a href="login.html">Se connecter</a></p>
+        <div id="formMessage" class="form-message" role="status"></div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"><p>&copy; UMMTO Share</p></div>
+  </footer>
+
+  <script src="../javascript/auth.js"></script>
+  <script src="../javascript/validation.js"></script>
+  <script src="../javascript/register.js"></script>
+</body>
+</html>

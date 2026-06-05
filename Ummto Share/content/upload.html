@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Partager une ressource — UMMTO Share</title>
+  <link rel="stylesheet" href="../style/main.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-bar">
+      <a href="../index.html" class="logo">UMMTO<span>Share</span></a>
+      <nav aria-label="Navigation principale">
+        <ul class="nav-links">
+          <li><a href="../index.html">Accueil</a></li>
+          <li><a href="resources.html">Ressources</a></li>
+          <li><a href="upload.html" class="active">Partager</a></li>
+          <li><a href="leaderboard.html">Helpers</a></li>
+          <li><a href="login.html">Connexion</a></li>
+          <li><a href="register.html" class="btn-cta">Inscription</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container form-page">
+    <section class="form-card">
+      <h1>Partager une ressource</h1>
+      <p class="muted">Tu gagnes <strong>+5 points</strong> à chaque ressource partagée.</p>
+
+      <div id="authGate" class="form-message error-bg" hidden>
+        Tu dois être connecté pour partager. <a href="login.html">Se connecter</a>
+      </div>
+
+      <form id="uploadForm" novalidate>
+        <div class="field">
+          <label for="title">Titre</label>
+          <input type="text" id="title" required />
+          <small class="error" data-error-for="title"></small>
+        </div>
+        <div class="field">
+          <label for="major">Filière</label>
+          <select id="major" required>
+            <option value="">— Choisir —</option>
+            <option>Informatique</option>
+            <option>Génie électrique</option>
+            <option>Mathématiques</option>
+            <option>Physique</option>
+            <option>Biologie</option>
+          </select>
+          <small class="error" data-error-for="major"></small>
+        </div>
+        <div class="field">
+          <label for="type">Type</label>
+          <select id="type" required>
+            <option value="">— Choisir —</option>
+            <option>Cours</option>
+            <option>TD</option>
+            <option>Examen</option>
+            <option>Projet</option>
+          </select>
+          <small class="error" data-error-for="type"></small>
+        </div>
+        <div class="field">
+          <label for="description">Description</label>
+          <textarea id="description" rows="4" required></textarea>
+          <small class="error" data-error-for="description"></small>
+        </div>
+        <div class="field">
+          <label for="link">Lien du fichier (Drive, Dropbox, etc.)</label>
+          <input type="url" id="link" placeholder="https://..." required />
+          <small class="error" data-error-for="link"></small>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Publier</button>
+        <div id="formMessage" class="form-message" role="status"></div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"><p>&copy; UMMTO Share</p></div>
+  </footer>
+
+  <script src="../javascript/auth.js"></script>
+  <script src="../javascript/data.js"></script>
+  <script src="../javascript/validation.js"></script>
+  <script src="../javascript/upload.js"></script>
+</body>
+</html>
